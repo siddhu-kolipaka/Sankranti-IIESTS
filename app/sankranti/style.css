@@ -1,0 +1,172 @@
+/* app/sankranti/sankranti.css */
+
+/* Define your colors as CSS variables */
+:root {
+  --sankranti-dark: #370617;
+  --sankranti-red: #9D0208;
+  --sankranti-orange: #E85D04;
+  --sankranti-amber: #FAA307;
+  --sankranti-gold: #FFBA08;
+}
+
+/* Fade-in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s ease-out both;
+}
+
+/* Optional: helper classes for colors */
+.bg-sankranti-dark {
+  background-color: var(--sankranti-dark);
+}
+
+.bg-sankranti-red {
+  background-color: var(--sankranti-red);
+}
+
+.bg-sankranti-orange {
+  background-color: var(--sankranti-orange);
+}
+
+.bg-sankranti-amber {
+  background-color: var(--sankranti-amber);
+}
+
+.bg-sankranti-gold {
+  background-color: var(--sankranti-gold);
+}
+
+.text-sankranti-dark {
+  color: var(--sankranti-dark);
+}
+
+.text-sankranti-red {
+  color: var(--sankranti-red);
+}
+
+.text-sankranti-orange {
+  color: var(--sankranti-orange);
+}
+
+.text-sankranti-amber {
+  color: var(--sankranti-amber);
+}
+
+.text-sankranti-gold {
+  color: var(--sankranti-gold);
+}
+
+.bg-sankranti-orange:hover {
+  background-color: var(--sankranti-red);
+}
+
+.text-fade-out {
+  animation: fadeOut 2000ms forwards ease-in-out;
+}
+
+.text-fade-in {
+  animation: fadeIn 500ms forwards ease-in-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fly-slow {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-40px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(-5deg); }
+}
+@keyframes fly-medium {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); }
+  50% { transform: translateY(-60px) translateX(20px) rotate(10deg); }
+  100% { transform: translateY(0) translateX(0) rotate(-5deg); }
+}
+@keyframes fly-fast {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-80px) rotate(15deg); }
+  100% { transform: translateY(0) rotate(-10deg); }
+}
+
+.animate-fly-slow {
+  animation: fly-slow 5s ease-in-out infinite;
+}
+.animate-fly-medium {
+  animation: fly-medium 4s ease-in-out infinite;
+}
+.animate-fly-fast {
+  animation: fly-fast 3s ease-in-out infinite;
+}
+
+/* === Background Video Container Styling === */
+.sankranti-bg-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.45;
+  filter: brightness(0.8) saturate(1.1);
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+  backdrop-filter: blur(2px);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Glass card enhancement */
+.glassy-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Adjust text shadows for readability */
+.text-shadow-lg {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
