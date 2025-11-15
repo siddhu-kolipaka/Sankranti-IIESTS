@@ -143,8 +143,8 @@ export function Gallery() {
 
   return (
     <div className="relative z-10 w-full py-16">
-      <h2 className="text-6xl md:text-7xl mb-12 text-center great-vibes-regular">
-        Image Gallery
+      <h2 className="text-6xl md:text-7xl mb-12 text-center castoro-titling-regular font-black">
+        Gallery
       </h2>
 
       <div
