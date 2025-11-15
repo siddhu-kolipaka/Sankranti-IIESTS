@@ -14,6 +14,7 @@ const config = {
       },
     },
     extend: {
+      
       colors: {
         wood: {
           light: "#deb887",

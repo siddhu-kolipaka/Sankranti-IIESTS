@@ -10,6 +10,59 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@layer utilities {
+  .aurora-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .aurora-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1; 
+    background-image: radial-gradient(
+        ellipse at 0% 0%,
+        #e85d04 0%, /* persimmon */
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse at 100% 100%,
+        #dc2f02 0%, /* sinopia */
+        transparent 70%
+      );
+    
+    background-size: 300% 300%;
+    opacity: 0.7; 
+    animation: aurora-pan 15s ease-in-out infinite;
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-slow {
+  animation: rotate-slow 200s linear infinite;
+}
+/* Floating Kites */
+@keyframes fly-kites {
+  0% { transform: translateY(20px) translateX(-10px) rotate(-5deg); }
+  50% { transform: translateY(-20px) translateX(10px) rotate(5deg); }
+  100% { transform: translateY(20px) translateX(-10px) rotate(-5deg); }
+}
+
+/* Floating Rangoli dots */
+@keyframes rangoli-float {
+ 0% { opacity: 0.3; transform: translateY(0); }
+ 50% { opacity: 0.8; transform: translateY(-12px); }
+ 100% { opacity: 0.3; transform: translateY(0); }
+}
 
 
 @layer base {

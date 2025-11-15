@@ -1,6 +1,8 @@
 "use client";
-
+import Image from 'next/image'
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+
 
 interface Props {
   images: string[];
@@ -31,10 +33,31 @@ export default function GalleryClient({ images, year, section }: Props) {
     i += count;
     p++;
   }
+  const router = useRouter();
 
   return (
-    <main className="min-h-screen bg-black text-white pb-20">
+    <main className="min-h-screen bg-black text-white pb-20 pt-16">
       {/* Header */}
+      <button
+        onClick={() => router.push("/gallery")}
+        className="
+          fixed top-20 left-14 mt-10
+          bg-white/10 text-white
+          px-4 py-2 rounded-xl
+          border border-white/20
+          backdrop-blur-md
+          hover:bg-white/20
+          transition-all
+          flex items-center gap-2
+          shadow-lg
+          cursor-pointer
+          z-[10]
+           max-[1025px]:hidden   /* Hide on small screens, visible on md+ */
+        "
+      >
+        ← Back
+      </button>
+
       <section className="w-full py-12 text-center">
         <h1 className="text-6xl font-extrabold drop-shadow-xl great-vibes">{section}</h1>
         <p className="text-3xl text-gray-300 mt-2 comforter ">
@@ -45,7 +68,7 @@ export default function GalleryClient({ images, year, section }: Props) {
       </section>
 
       {/* GRID */}
-      <div className="max-w-6xl mx-auto px-4 flex flex-col gap-8">
+      <div className="max-w-[75rem] mx-auto px-4 flex flex-col gap-8">
 
         {rows.map((row, rowIndex) => (
           <div
@@ -76,8 +99,11 @@ export default function GalleryClient({ images, year, section }: Props) {
                     transition-all duration-300"
                 />
 
-                <img
+                <Image
                   src={src}
+                  // fill
+                  height={500}
+                  width={500}
                   alt=""
                   className="w-full h-[320px] object-cover rounded-2xl 
                              transition-transform duration-500 group-hover:scale-110"

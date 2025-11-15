@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-
+import Image from 'next/image'
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./gallery.css";
@@ -40,44 +40,54 @@ const App: React.FC = () => {
 
   const photoGroups: PhotoGroup[] = [
     {
-      year: "January 15 2025",
+      year: "2025",
       photos: [
         "/galleryphotos/2025/bhogi/DSC_0017.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0224.jpg",
-        "https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg",
-        "https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-13.jpg",
-        "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-beautiful-desktop-images-cool.jpg",
-        "https://www.pixelstalk.net/wp-content/uploads/2016/07/3840x2160-Images-Free-Download.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0224.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0224.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0224.jpg",
+        // "https://images.pexels.com/photos/236047/pexels-/photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg",
+        // "https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-13.jpg",
+        // "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-beautiful-desktop-images-cool.jpg",
+        // "https://www.pixelstalk.net/wp-content/uploads/2016/07/3840x2160-Images-Free-Download.jpg",
       ],
       sections: {
         
       },
     },
     {
-      year: "January 14 2024",
+      year: "2024",
       photos: [
         "/galleryphotos/2025/bhogi/DSC_0050.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
-        "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?cs=srgb&dl=forest-trees-nature-green-1761279.jpg&fm=jpg",
-        "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?cs=srgb&dl=sea-ocean-sunset-3225517.jpg&fm=jpg",
-        "https://wallpapershome.com/images/pages/pic_h/14367.jpg",
-        "https://www.pixelstalk.net/wp-content/uploads/2016/07/Beautiful-Images-HD-Free-Download.jpg",
-        "https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Images-Free-Download-Beautiful.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0228.jpg",
+        // "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?cs=srgb&dl=forest-trees-nature-green-1761279.jpg&fm=jpg",
+        // "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?cs=srgb&dl=sea-ocean-sunset-3225517.jpg&fm=jpg",
+        // "https://wallpapershome.com/images/pages/pic_h/14367.jpg",
+        // "https://www.pixelstalk.net/wp-content/uploads/2016/07/Be/autiful-Images-HD-Free-Download.jpg",
+        // "https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Images-Free-Download-Beautiful.jpg",
       ],
       sections: {
         
       },
     },
     {
-      year: "January 10 2023",
+      year: "2023",
       photos: [
         "/galleryphotos/2025/bhogi/DSC_0059.jpg",
           "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
-        "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?cs=srgb&dl=mountain-top-view-3408744.jpg&fm=jpg",
-        "https://wallpapershome.com/images/pages/pic_h/21969.jpg",
-        "https://images.pexels.com/photos/2080965/pexels-photo-2080965.jpeg?cs=srgb&dl=forest-lake-reflection-2080965.jpg&fm=jpg",
-        "https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg?cs=srgb&dl=beautiful-landscape-mountains-nature-316466.jpg&fm=jpg",
-        "https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?cs=srgb&dl=sunset-sky-clouds-912110.jpg&fm=jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
+          "/galleryphotos/2025/sankranthi/DSC_0419.jpg",
+        // "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?cs=srgb&dl=mountain-top-view-3408744.jpg&fm=jpg",
+        // "https://wallpapershome.com/images/pages/pic_h/21969.jpg",
+        // "https://images.pexels.com/photos/2080965/pexels-photo-2080965.jpeg?cs=srgb&dl=forest-lake-reflection-2080965.jpg&fm=jpg",
+        // "https://images.pexels.com/photos/316466/pexels-photo-316466.jpeg?cs=srgb&dl=beautiful-landscape-mountains-nature-316466.jpg&fm=jpg",
+        // "https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?cs=srgb&dl=sunset-sky-clouds-912110.jpg&fm=jpg",
       ],
       sections: {
         
@@ -101,6 +111,7 @@ const App: React.FC = () => {
   ref={(el) => {
     if (el) el.playbackRate = 0.75;   // <<< slow motion
   }}
+  preload="auto"
   src="/galleryphotos/videoback2.mp4"
   autoPlay
   loop
@@ -125,7 +136,7 @@ const App: React.FC = () => {
       {/* Rotating Kolam */}
       
       {/* Heading */}
-      <div className="text-center mb-20 z-10">
+      <div className="text-center mb-20 z-10 pt-6">
         <h1
   className={`${dancing.className} text-4xl md:text-8xl font-extrabold text-transparent bg-clip-text [-webkit-background-clip:text] bg-white`}
 >
@@ -147,7 +158,7 @@ const App: React.FC = () => {
       </div>
 
       {/* === Timeline Section === */}
-      <div className="relative w-full max-w-5xl z-10">
+      <div className="relative w-full max-w-8xl z-10">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-white/40"></div>
 {photoGroups.map((group, index) => (
   <div
@@ -167,7 +178,7 @@ const App: React.FC = () => {
   <motion.div
     // onClick={() => setSelectedYear(group)}
     onClick={() => router.push(`/gallery/${encodeURIComponent(group.year)}/Bhogi`)}
-    className="relative w-[250px] h-[150px] sm:w-[300px] sm:h-[180px] md:w-[360px] md:h-[220px] group cursor-pointer"
+    className="relative w-[250px] h-[150px]  sm:w-[400px] sm:h-[260px] md:w-[460px] md:h-[300px] group cursor-pointer"
 
     initial="initial"
     whileHover="hover"
@@ -175,23 +186,32 @@ const App: React.FC = () => {
   >
     {/* STACK IMAGES */}
     {group.photos.map((img, i) => (
-      <motion.img
-        key={i}
-        src={img}
-        className="absolute w-full h-full object-cover rounded-xl border-4 border-white shadow-md"
-        variants={{
-          initial: { rotate: (i-1) * 2 },
-          hover: {
-            rotate: (i - 2) * 3 + i * 2,
-            transition: { duration: 0.45, ease: "easeInOut" }
-          }
-        }}
-        style={{
-          zIndex: 10 - i,
-          willChange: "transform"
-        }}
-        alt=""
-      />
+     <motion.div
+  key={i}
+  className="absolute w-full h-full rounded-xl border-4 border-white shadow-md"
+  variants={{
+    initial: { rotate: (i - 1) * 2 },
+    hover: {
+      rotate: (i - 2) * 3 + i * 2,
+      transition: { duration: 0.45, ease: "easeInOut" }
+    }
+  }}
+  style={{
+    zIndex: 10 - i,
+    willChange: "transform"
+  }}
+>
+  <div className="absolute inset-0 rounded-xl overflow-hidden">
+    <Image
+      src={img}
+      alt=""
+      fill
+      loading="lazy"
+      className="object-cover rounded-xl"
+    />
+  </div>
+</motion.div>
+
     ))}
 
     {/* ONLY FIRST IMAGE OVERLAY */}
@@ -263,15 +283,16 @@ const App: React.FC = () => {
     z-30 
     backdrop-blur-[15px]
     hidden md:block 
+    p-2
   "
 >
-  <span className="text-white text-lg font-semibold bg-black/40 px-4 py-2 rounded-lg border border-white/20">
+  <span className="text-white text-2xl font-semibold bg-black/40 px-4 py-2 rounded-lg border border-white/20">
     {group.year}
   </span>
 </div>
 
 {/* MOBILE DATE — shown above both stacks */}
-<div className="md:hidden w-full flex justify-center mb-4 mt-4 backdrop-blur-[15px]">
+<div className="md:hidden w-full flex justify-center mb-4 mt-4 backdrop-blur-[15px] p-0.5">
   <span className="text-white text-base font-semibold bg-black/40 px-4 py-2 rounded-lg border border-white/20">
     {group.year}
   </span>
@@ -290,7 +311,9 @@ const App: React.FC = () => {
     onClick={() => router.push(`/gallery/${encodeURIComponent(group.year)}/Sankranthi`)}
 
     // className="relative w-[360px] h-[220px] group cursor-pointer"
-    className="relative w-[250px] h-[150px] sm:w-[300px] sm:h-[180px] md:w-[360px] md:h-[220px] group cursor-pointer"
+    // className="relative w-[250px] h-[150px] sm:w-[300px] sm:h-[180px] md:w-[460px] md:h-[300px] group cursor-pointer"
+    className="relative w-[250px] h-[150px]  sm:w-[400px] sm:h-[260px] md:w-[460px] md:h-[300px] group cursor-pointer"
+
 
     initial="initial"
     whileHover="hover"
@@ -299,23 +322,34 @@ const App: React.FC = () => {
     {/* STACK IMAGES */}
     {/* {group.photos.map((img, i) => ( */}
     {[...group.photos.slice(1), group.photos[0]].map((img, i) => (
-      <motion.img
-        key={i}
-        src={img}
-        className="absolute w-full h-full object-cover rounded-xl border-4 border-white shadow-md"
-        variants={{
-          initial: { rotate: (i - 1) * 2 },
-          hover: {
-            rotate: (i - 2) * 3 + i * 2,
-            transition: { duration: 0.45, ease: "easeInOut" }
-          }
-        }}
-        style={{
-          zIndex: 10 - i,
-          willChange: "transform"
-        }}
-        alt=""
-      />
+      <motion.div
+  key={i}
+  className="absolute w-full h-full rounded-xl border-4 border-white shadow-md"
+  variants={{
+    initial: { rotate: (i - 1) * 2 },
+    hover: {
+      rotate: (i - 2) * 3 + i * 2,
+      transition: { duration: 0.45, ease: "easeInOut" }
+    }
+  }}
+  style={{
+    zIndex: 10 - i,
+    willChange: "transform"
+  }}
+>
+  <div className="absolute inset-0 rounded-xl overflow-hidden">
+    <Image
+      src={img}
+      alt=""
+      width={500}
+      height={500}
+      className="object-cover rounded-xl"
+    />
+  </div>
+</motion.div>
+
+
+      
     ))}
 
     {/* DARK OVERLAY ONLY ON TOP CARD */}
