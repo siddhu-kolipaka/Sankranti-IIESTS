@@ -1,6 +1,6 @@
 export const photoGroups = [
   {
-    year: "January 15 2025",
+    year: "2025",
     photos: [
         "https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg",
         "https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?cs=srgb&dl=clouds-cloudy-conifers-247478.jpg&fm=jpg",
@@ -49,7 +49,7 @@ export const photoGroups = [
       },
   },
   {
-    year: "January 14 2024",
+    year: "2024",
     photos: [
         "https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?cs=srgb&dl=clouds-cloudy-conifers-247478.jpg&fm=jpg",
         "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-beautiful-desktop-images-cool.jpg",
@@ -95,7 +95,7 @@ export const photoGroups = [
       }
   },
   {
-    year: "January 10 2023",
+    year: "2023",
     photos: [
         "https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg",
         "https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-13.jpg",
