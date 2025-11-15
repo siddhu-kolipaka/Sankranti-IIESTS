@@ -17,10 +17,10 @@ export default function HeroSection() {
       <div className="absolute top-0 left-0 w-full h-full bg-black/50" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-        <h1 className="text-6xl md:text-7xl font-extrabold tracking-wide drop-shadow-lg">
+        <h1 className="text-6xl md:text-8xl tracking-wide drop-shadow-lg comforter-regular">
           BHOGI
         </h1>
-        <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-200">
+        <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-200 text-[#c2beb8]">
           A celebration of new beginnings, warmth, and togetherness.
           <br /> Let go of the old and welcome the light of the new.
         </p>
