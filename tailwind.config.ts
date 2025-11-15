@@ -143,6 +143,30 @@ const config = {
           800: "#ffe39d",
           900: "#fff1ce",
         },
+        "deep-ocean":{
+          DEFAULT:"#4d194d",
+          100:"#3e1f47",
+          200:"#312244",
+          300:"#272640",
+          400:"#212f45",
+          500:"#1b3a4b",
+          600:"#144552",
+          700:"#0b525b",
+          800:"#065a60",
+          900:"#00b4d8"
+        },
+        "green-meadow":{
+          DEFAULT:"#55a630",
+          100:"#F5F5DC",
+          200:"#2b9348",
+          300:"#80b918",
+          400:"#aacc00",
+          500:"#bfd200",
+          600:"#d4d700",
+          700:"#dddf00",
+          800:"#eeef20",
+          900:"#ffff3f"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -183,10 +207,47 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        fadeOut: {
+          '0%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+          '100%': {
+            opacity: '0',
+            transform: 'translateY(-15px)',
+          },
+        },
+        fadeIn: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(15px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'fade-in': 'fade-in 1.2s ease-out both',
+        'text-fade-out': 'fadeOut 2000ms ease-in-out forwards',
+        'text-fade-in': 'fadeIn 500ms ease-in-out forwards',
+      },
+      fontFamily: {
+        inter: ['"Inter"', "sans-serif"],
+        comforter: ['"Comforter"', "cursive"],
       },
     },
   },

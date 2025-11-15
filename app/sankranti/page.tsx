@@ -2,7 +2,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import AboutSection from "../../components/sankranti/AboutSection";
-import "./style.css";
 import React, { useState, useEffect } from 'react';
 import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card";
 
@@ -51,25 +50,21 @@ export default function SankrantiPage() {
   ];
 
   return (
-    <div className="relative sankranti-bg-container">
+    <div className="relative overflow-hidden">
       {/* Background video */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="background-video"
+        className="fixed top-0 left-0 w-full h-full object-cover -z-20"
       >
         <source src="sankranti/Video_Generation_and_Enhancement - Trim.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay shade */}
-      <div className="background-overlay"></div>
-
-      <main ref={ref} className="relative min-h-screen z-20 text-sankranti-red">
+      <main ref={ref} className="relative min-h-screen z-10 text-white">
         <motion.div style={{ opacity: heroOpacity }}>
-          <section className="min-h-screen relative flex items-center justify-center h-screen overflow-hidden z-30 bg-transparent">
-
+          <section className="min-h-screen relative flex items-center justify-center h-screen overflow-hidden z-10 bg-transparent">
             {/* Sparkles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {sparkles.map((s, i) => (
@@ -91,38 +86,34 @@ export default function SankrantiPage() {
             </div>
 
             {/* Main Title and Subtitle */}
-            <div className="relative z-30 text-center animate-fade-in p-6 rounded-2xl">
+            <div className="absolute top-20 z-10 text-center animate-fade-in p-6 rounded-2xl">
+
               <h1
-                className={`font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-orange-400 to-yellow-500 text-[50px] md:text-[120px] ${animationClass}`}
+                className={`font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#B43403] via-[#DC6E17] to-[#F9BE5A]  font-inter
+                    text-[50px] md:text-[120px]
+                    tracking-wide ${animationClass}`}
               >
                 {titleWords[currentWordIndex]}
               </h1>
-              <p className="text-lg md:text-xl font-semibold text-white drop-shadow-lg">
+
+              <p
+                className="text-lg md:text-2xl font-semibold drop-shadow-xl tracking-wide"
+              >
                 Celebrating the spirit of harvest, unity, and joy at IIEST Shibpur
               </p>
+
             </div>
+
           </section>
         </motion.div>
 
         <motion.div>
           <AboutSection />
-          {/* Footer CTA */}
-          <section className="pb-12 text-center">
-            <h2 className="text-2xl font-semibold text-sankranti-gold mb-4">
-              Want to relive the moments?
-            </h2>
-            <a
-              href="/gallery"
-              className="bg-sankranti-orange text-white px-6 py-3 rounded-full font-medium transition hover:bg-sankranti-red"
-            >
-              Visit Full Gallery
-            </a>
-          </section>
         </motion.div>
 
         {/* Events Section */}
         <motion.section
-          className="min-h-screen max-w-7xl mx-auto px-6 pt-20 pb-0 relative z-30 text-white"
+          className="min-h-screen max-w-7xl mx-auto px-6 pt-10 pb-0 relative z-30 text-white"
         >
           {/* Heading */}
           <div className="text-center mb-0">
@@ -160,7 +151,7 @@ export default function SankrantiPage() {
                 {/* main title with festival gradient */}
                 <span
                   className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400
-                   text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight
+                   text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-comforter
                    drop-shadow-[0_8px_18px_rgba(0,0,0,0.55)]"
                 >
                   EVENTS
@@ -181,7 +172,7 @@ export default function SankrantiPage() {
 
               {/* small subtitle */}
               <motion.p
-                className="mt-4 text-sm md:text-base font-medium text-sankranti-gold/90"
+                className="mt-4 text-sm md:text-base font-medium"
                 initial={{ opacity: 0, y: 6 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -191,58 +182,73 @@ export default function SankrantiPage() {
               </motion.p>
             </motion.h2>
           </div>
-
-
-          {/* 3D Event Cards */}
-          <div className="flex justify-center flex-wrap gap-10 px-4">
-            {events.map((event, index) => (
-              <CardContainer
-                key={event.title}
-                className="inter-var [perspective:10000px]"
+          {/* Event Cards */}
+          <div className="flex flex-col md:flex-row flex-wrap justify-center items-between gap-10 mt-10 pb-5">
+            {[
+              {
+                title: "Puja",
+                date: "11 January 2026",
+                time: "10:00 AM",
+                venue: "Netaji Bhavan",
+              },
+              {
+                title: "Cultural Performance",
+                date: "11 January 2026",
+                time: "11:00 AM",
+                venue: "Netaji Bhavan",
+              },
+              {
+                title: "Dance",
+                date: "11 January 2026",
+                time: "11:30 AM",
+                venue: "Netaji Bhavan",
+              },
+              {
+                title: "Classical Parade",
+                date: "11 January 2026",
+                time: "2:00 PM",
+                venue: "Netaji Bhavan",
+              },
+              {
+                title: "Dj",
+                date: "11 January 2026",
+                time: "2:30 AM",
+                venue: "Netaji Bhavan",
+              },
+            ].map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                whileHover={{ scale: 1.04 }}
+                className="relative group bg-green-meadow-100 rounded-xl shadow-lg border border-amber-400 p-6 md:h-[250px] md:w-[300px]"
               >
-                <CardBody
-                  className="relative group/card shadow-lg w-auto sm:w-[20rem] h-auto rounded-xl pt-8 pb-12 px-3 border border-black/10 [transform-style:preserve-3d]"
+                <h3 className="text-2xl font-bold text-orange-600 drop-shadow-lg text-center mt-4 tracking-wide">
+                  {event.title}
+                </h3>
+
+                <div className="mt-4 text-center text-gray-700 font-medium space-y-2">
+                  <p>
+                    <span className="font-semibold text-yellow-600">Date:</span> {event.date}
+                  </p>
+                  <p>
+                    <span className="font-semibold text-yellow-600">Time:</span> {event.time}
+                  </p>
+                  <p>
+                    <span className="font-semibold text-yellow-600">Venue:</span> {event.venue}
+                  </p>
+                </div>
+
+                <motion.span
+                  className="absolute top-3 right-3 text-yellow-500"
+                  animate={{ scale: [1, 1.3, 1] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                 >
-                  <div
-                    className="absolute inset-0 rounded-xl pointer-events-none z-0"
-                    style={{
-                      background: "rgba(0,0,0,0.40)",
-                      backdropFilter: "blur(6px)",
-                      WebkitBackdropFilter: "blur(6px)",
-                    }}
-                  />
-                  <div className="relative z-10">
-                    <CardItem
-                      translateZ="50"
-                      className="text-3xl font-bold text-white"
-                    >
-                      {event.title}
-                    </CardItem>
-
-                    <CardItem
-                      as="p"
-                      translateZ="60"
-                      className="text-white/90 text-sm max-w-sm mt-2"
-                    >
-                      Hover over this card to unleash the power of CSS perspective
-                    </CardItem>
-
-                    <CardItem translateZ="100" className="w-full mt-4">
-                      <img
-                        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt={event.title}
-                        height="200"
-                        width="200"
-                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl transition-transform duration-300"
-                        style={{
-                          willChange: "transform",
-                          backfaceVisibility: "hidden",
-                        }}
-                      />
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
+                  ✨
+                </motion.span>
+              </motion.div>
             ))}
           </div>
         </motion.section>
