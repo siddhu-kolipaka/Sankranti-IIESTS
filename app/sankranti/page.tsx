@@ -43,17 +43,21 @@ export default function SankrantiPage() {
 
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
-  function useFadeText(text: string) {
-  const [displayed, setDisplayed] = useState("");
+  function useFadeText(text: string, delay = 500) {
+    const [displayed, setDisplayed] = useState("");
 
-  useEffect(() => {
-    setDisplayed(text); // instantly set full word
-  }, [text]);
+    useEffect(() => {
+      setDisplayed("");
+      const timer = setTimeout(() => {
+        setDisplayed(text);
+      }, delay);
+      return () => clearTimeout(timer);
+    }, [text, delay]);
 
-  return displayed;
-}
+    return displayed;
+  }
 
-const typedText = useFadeText(titleWords[currentWordIndex]);
+  const typedText = useFadeText(titleWords[currentWordIndex]);
 
   return (
     <main ref={ref} className="relative min-h-screen -z-10 bg-gradient-to-br from-[#d0e8ff] via-[#b5d9ff] to-[#6ab7ff] text-white">
@@ -66,7 +70,7 @@ const typedText = useFadeText(titleWords[currentWordIndex]);
           playsInline
           className="fixed top-0 left-0 w-full h-full object-cover -z-20"
         >
-          <source src="sankranti/WhatsApp Video 2025-11-15 at 6.39.49 PM.mp4" type="video/mp4" />
+          <source src="sankranti/WhatsApp Video 2025-11-15 at 6.39.49 PM - Trim.mp4" type="video/mp4" />
         </video>
         <section className="min-h-screen relative flex items-center justify-center h-screen overflow-hidden z-10 bg-transparent">
           {/* Sparkles */}
@@ -154,7 +158,7 @@ const typedText = useFadeText(titleWords[currentWordIndex]);
               {/* main title with festival gradient */}
               <span
                 className="bg-clip-text text-white
-                   text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-comforter"
+                   text-6xl font-extrabold tracking-tight font-comforter"
               >
                 EVENTS
               </span>
@@ -227,33 +231,33 @@ const typedText = useFadeText(titleWords[currentWordIndex]);
               whileHover={{ scale: 1.04 }}
               className="relative group bg-green-meadow-100 rounded-xl shadow-lg border border-amber-400 p-6 md:h-[250px] md:w-[300px]"
             >
-              <h3 className="text-2xl font-bold text-orange-600 drop-shadow-lg text-center mt-4 tracking-wide">
+              <h3 className="text-2xl font-bold text-blue-600 drop-shadow-lg text-center mt-4 tracking-wide">
                 {event.title}
               </h3>
 
               <div className="mt-4 text-center text-gray-700 font-medium space-y-2">
                 <p>
-                  <span className="font-semibold text-yellow-600">Date:</span> {event.date}
+                  <span className="font-semibold text-blue-600">Date:</span> {event.date}
                 </p>
                 <p>
-                  <span className="font-semibold text-yellow-600">Time:</span> {event.time}
+                  <span className="font-semibold text-blue-600">Time:</span> {event.time}
                 </p>
                 <p>
-                  <span className="font-semibold text-yellow-600">Venue:</span> {event.venue}
+                  <span className="font-semibold text-blue-600">Venue:</span> {event.venue}
                 </p>
               </div>
 
-                <motion.span
-                  className="absolute top-3 right-3 text-yellow-500"
-                  animate={{ scale: [1, 1.3, 1] }}
-                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                >
-                  ✨
-                </motion.span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-      </main>
+              <motion.span
+                className="absolute top-3 right-3 text-blue-500"
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              >
+                ✨
+              </motion.span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+    </main>
   );
 }
