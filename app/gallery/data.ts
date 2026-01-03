@@ -67,7 +67,6 @@ export const photoGroups = [
         "/galleryphotos/2024/sankranthi/framebird-converted1/news4.webp",
         "/galleryphotos/2024/sankranthi/framebird-converted1/news2.webp",
         "/galleryphotos/2024/sankranthi/framebird-converted1/news5.webp",
-        "/galleryphotos/2024/sankranthi/framebird-converted1/news6.webp",
       ],
       Bhogi: [
         "/galleryphotos/2024/bhogi/framebird-converted/newb4.webp",
@@ -113,7 +112,7 @@ export const photoGroups = [
         "/galleryphotos/2023/sankranthi/framebird-converted2/news8.webp",
         "/galleryphotos/2023/sankranthi/framebird-converted2/news9.webp",
         "/galleryphotos/2023/sankranthi/framebird-converted2/news10.webp",
-        "/galleryphotos/2023/sankranthi/framebird-converted2/news11.webp",
+        "/galleryphotos/2024/sankranthi/framebird-converted1/news6.webp",
         "/galleryphotos/2023/sankranthi/framebird-converted2/news12.webp",
         "/galleryphotos/2023/sankranthi/framebird-converted2/news14.webp",
         "/galleryphotos/2023/sankranthi/framebird-converted2/news15.webp",
